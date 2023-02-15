@@ -1,13 +1,19 @@
 from django.shortcuts import render
-from AppCoder.models import Curso
 from django.http import HttpResponse
 
+# from AppCoder.models import Curso
 
-# Create your views here.
+def inicio(request):
+    return render(request, 'appcoder/inicio.html')
 
-def curso(request):
-    curso = Curso(nombre='Backend', camada='12345')
-    curso.save()
-    respuesta = f'Curso: {curso.nombre}, Camada: {curso.camada}'
+def cursos(request):
+    return render(request, 'appcoder/cursos.html')
 
-    return HttpResponse(respuesta)
+def profesores(request):
+    return render(request, 'appcoder/profesores.html')
+
+def estudiantes(request):
+    return render(request, 'appcoder/estudiantes.html')
+
+def entregables(request):
+    return render(request, 'appcoder/entregables.html')
