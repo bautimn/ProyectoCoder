@@ -7,3 +7,9 @@ e instalamos los requerimientos pip install -r requirements
 instalamos django pip install django
 y las migraciones py manage.py migrate
 y activamos el proyecto con py manage.py runserver
+
+links: cursos/
+profesores/
+estudiantes/
+entregables/
+profesor-formulario/
