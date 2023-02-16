@@ -1,0 +1,33 @@
+{% extends 'appcoder/padre.html' %}
+
+{% block titulo %}
+Formulario - Agregar Curso
+{% endblock titulo %}
+
+{% block contenido %}
+<section class="features-icons bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                {% if formulario_curso.errors %}
+                <p style="color: red;">Los datos estan mal. Por favor reviselos.</p>
+                {% endif %}
+                <form action="{% url 'curso-formulario' %}" method="POST">
+                {% csrf_token %}
+                <!-- <p>Curso: <input type="text" name="curso"></p>
+                <p>Camada: <input type="number" name="camada"></p>
+                -->
+
+                <table>
+                    {{ formulario_curso.as_table }}
+                </table>
+
+                <input type="submit" value="Enviar">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contenido %}
